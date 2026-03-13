@@ -11,4 +11,10 @@ public interface IDataService
     Task<Reservation> AddReservationAsync(Reservation reservation);
     Task<bool> UpdateReservationAsync(Reservation reservation);
     Task<bool> DeleteReservationAsync(Guid id);
+
+    // Vehicles
+    Task<IEnumerable<Vehicle>> GetVehiclesAsync();
+    Task<Vehicle> AddVehicleAsync(Vehicle vehicle);
+    Task<bool> UpdateVehicleAsync(Vehicle vehicle);
+    Task<bool> DeleteVehicleAsync(Guid id);
 }

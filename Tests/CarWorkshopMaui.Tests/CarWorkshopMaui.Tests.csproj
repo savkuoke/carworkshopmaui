@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
+    <PackageReference Include="xunit" Version="2.4.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Include the service and model sources directly so tests can run targeting net8.0
+         This avoids the platform-specific net8.0-maccatalyst project reference. -->
+    <Compile Include="..\..\Services\InMemoryDataService.cs" />
+    <Compile Include="..\..\Services\IDataService.cs" />
+    <Compile Include="..\..\Models\Vehicle.cs" />
+    <Compile Include="..\..\Models\Reservation.cs" />
+  </ItemGroup>
+</Project>
